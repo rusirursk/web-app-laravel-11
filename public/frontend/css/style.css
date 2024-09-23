@@ -408,6 +408,19 @@
     right: 0;
     top: 0;
 }
+.hero-bg-half-1custom {
+    clip-path: polygon(37% 0%, 100% 0%, 100% 100%, 0% 100%);
+    filter: grayscale(10%);
+    transform: scale(100% - 50%);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 58%;
+    height: 100%;
+    right: 0;
+    top: 0;
+}
 
 .hero-bg-half-2 {
     background-image: url(../img/header-1.jpg);
