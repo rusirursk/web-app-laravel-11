@@ -1,14 +1,17 @@
 <?php
 
 use App\Http\Controllers\admin\SliderController;
+use App\Http\Controllers\admin\TestimonialController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Slider;
+use App\Models\Testimonial;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
     $sliders = Slider::all();
-    return view('frontend.home',compact('sliders'));
+    $testimonials = Testimonial::all();
+    return view('frontend.home',compact('sliders','testimonials'));
 });
 
 Route::get('/dashboard', function () {
@@ -27,6 +30,15 @@ Route::controller(SliderController::class)->middleware(['auth','verified'])->gro
     Route::post('/sliderUpdate','updateslider')->name('slider.update');
     Route::get('/deleteSlider/{id}','deleteslider')->name('slider.delete');
 });
+
+Route::controller(TestimonialController::class)->middleware(['auth','verified'])->group(function (){
+    Route::get('/TestimonialIndex','Index')->name('Testimonial.index');
+    Route::post('/saveTestimonial','storeTestimonial')->name('Testimonial.store');
+    Route::post('/TestimonialUpdate','updateTestimonial')->name('Testimonial.update');
+    Route::get('/deleteTestimonial/{id}','deleteTestimonial')->name('Testimonial.delete');
+});
+
+
 
  
 
