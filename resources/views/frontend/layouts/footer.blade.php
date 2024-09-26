@@ -49,10 +49,9 @@
                 <div class="footer-item d-flex flex-column">
                     <h4 class="text-white mb-4">Contact Info</h4>
                     <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i> 123 Street, New York, USA</a>
-                    <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
-                    <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
-                    <a href="tel:+012 345 67890"><i class="fas fa-phone text-primary me-2"></i> +012 345 67890</a>
-                    <a href="tel:+012 345 67890" class="mb-3"><i class="fas fa-print text-primary me-2"></i> +012 345 67890</a>
+                    <a href="{{ $main_settings['site_email']}}"><i class="fas fa-envelope text-primary me-2"></i> {{ $main_settings['site_email']}}</a>
+                    <a href="tel:+012 345 67890"><i class="fas fa-phone text-primary me-2"></i> {{ $main_settings['site_phone']}}</a>
+                 
                 </div>
             </div>
         </div>

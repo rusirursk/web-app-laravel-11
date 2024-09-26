@@ -3,7 +3,7 @@
         <div class="d-flex align-items-center h-100">
             <a href="#" class="navbar-brand" style="height: 125px;">
                 <h1 class="text-primary mb-0"><i class="fas fa-bolt"></i> Electra</h1>
-                <!-- <img src="img/logo.png" alt="Logo"> -->
+                <!-- <img src="FrontEnd/img/logo.png" alt="Logo"> -->
             </a>
         </div>
         <div class="w-100 h-100">
@@ -22,10 +22,10 @@
                     <div class="col-lg-4 text-center text-lg-end">
                         <div class="d-flex justify-content-end">
                             <div class="d-flex border-end border-primary pe-3">
-                                <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
-                                <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn p-0 text-primary me-3" href="{{ $main_settings['facebook_link']}}"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn p-0 text-primary me-3" href="{{ $main_settings['twitter_link']}}"><i class="fab fa-twitter"></i></a>
+                                <a class="btn p-0 text-primary me-3" href="{{ $main_settings['instagram_link']}}"><i class="fab fa-instagram"></i></a>
+                                <a class="btn p-0 text-primary me-0" href="{{ $main_settings['linkedin_link']}}"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                             <div class="dropdown ms-3">
                                 <a href="#" class="dropdown-toggle text-white" data-bs-toggle="dropdown"><small class="text-body"><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
@@ -45,17 +45,17 @@
                 <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-lg-end">
                     <a href="#" class="navbar-brand-2">
                         <h1 class="text-primary mb-0"><i class="fas fa-bolt"></i> Electra</h1>
-                        <!-- <img src="img/logo.png" alt="Logo"> -->
+                        <!-- <img src="FrontEnd/img/logo.png" alt="Logo"> -->
                     </a>  
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav mx-0 mx-lg-auto bg-white">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="service.html" class="nav-item nav-link">Service</a>
-                            <a href="blog.html" class="nav-item nav-link">Blog</a>
+                            <a href="/" class="nav-item nav-link active">Home</a>
+                            <a href="/about" class="nav-item nav-link">About</a>
+                            <a href="/service" class="nav-item nav-link">Service</a>
+                            <a href="/blog" class="nav-item nav-link">Blog</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link" data-bs-toggle="dropdown">
                                     <span class="dropdown-toggle">Pages</span>

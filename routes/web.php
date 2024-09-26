@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\admin\TestimonialController;
 use App\Http\Controllers\ProfileController;
@@ -39,7 +40,10 @@ Route::controller(TestimonialController::class)->middleware(['auth','verified'])
 });
 
 
-
+Route::controller(SettingsController::class)->middleware(['auth','verified'])->group(function (){
+   Route::get('/settings','index')->name('settings'); 
+   Route::post('/settingUpdate','update')->name('settings.update');
+});
  
 
 require __DIR__.'/auth.php';
