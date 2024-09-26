@@ -34,7 +34,6 @@ class SettingsController extends Controller
             foreach ($request->all() as $key => $value){
                 Settings::updateOrCreate(['key'=>$key],['value'=>$value]);
             }
-
             return redirect()->back()->with('success','Settings updated successfully! ');
     }
 }
