@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\admin\PostsController;
 use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\admin\TestimonialController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Posts;
 use App\Models\Slider;
 use App\Models\Testimonial;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +17,20 @@ Route::get('/', function () {
     return view('frontend.home',compact('sliders','testimonials'));
 });
 
+Route::get('/about', function () {
+    return view('frontend.about');
+});
+
+Route::get('/blog', function () {
+    $posts = Posts::orderBy('created_at','desc')->paginate(6);
+
+    return view('frontend.blog',compact('posts'));
+});
+
+Route::get('/blog/{slug}', function ($slug) {
+    $post = Posts::where('slug', $slug)->first();
+    return view('frontend.post-single',compact('post'));
+});
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -44,6 +60,15 @@ Route::controller(SettingsController::class)->middleware(['auth','verified'])->g
    Route::get('/settings','index')->name('settings'); 
    Route::post('/settingUpdate','update')->name('settings.update');
 });
+
+Route::controller(PostsController::class)->middleware(['auth','verified'])->group(function (){
+   
+    Route::get('/postIndex','index');
+    Route::post('/savePost','storepost')->name('post.store');
+    Route::post('/postUpdate','updatepost')->name('post.update');
+    Route::get('/deletePost/{id}','deletepost')->name('post.delete');
+   
+ });
  
 
 require __DIR__.'/auth.php';

@@ -55,9 +55,9 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Settings
                 </a>
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/postIndex">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Tables
+                    Blog Posts
                 </a>
             </div>
         </div>
