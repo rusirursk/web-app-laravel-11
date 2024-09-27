@@ -5,10 +5,12 @@ use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\admin\TestimonialController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\TimeRestrictedAccess;
 use App\Models\Posts;
 use App\Models\Slider;
 use App\Models\Testimonial;
 use Illuminate\Support\Facades\Route;
+use Ramsey\Uuid\Type\Time;
 
 Route::get('/', function () {
 
@@ -20,6 +22,12 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('frontend.about');
 });
+
+
+Route::get('/service', function () {
+    return view('frontend.service');
+})->middleware([TimeRestrictedAccess::class]);
+
 
 Route::get('/blog', function () {
     $posts = Posts::orderBy('created_at','desc')->paginate(6);
