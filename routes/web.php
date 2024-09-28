@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\PermissionController;
 use App\Http\Controllers\admin\PostsController;
 use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\admin\SliderController;
@@ -76,6 +77,14 @@ Route::controller(PostsController::class)->middleware(['auth','verified'])->grou
     Route::post('/postUpdate','updatepost')->name('post.update');
     Route::get('/deletePost/{id}','deletepost')->name('post.delete');
    
+ });
+
+ Route::controller(PermissionController::class)->middleware(['auth','verified'])->group(function (){
+    
+    Route::get('/permissionIndex','index');
+    Route::post('/savePermission','storepermission')->name('permission.store');
+    Route::post('/permissionUpdate','updatepermission')->name('permission.update');
+    Route::get('/deletePermission/{id}','deletepermission')->name('permission.delete');
  });
  
 
