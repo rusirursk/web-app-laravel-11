@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\PermissionController;
 use App\Http\Controllers\admin\PostsController;
+use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\admin\TestimonialController;
@@ -86,6 +87,18 @@ Route::controller(PostsController::class)->middleware(['auth','verified'])->grou
     Route::post('/permissionUpdate','updatepermission')->name('permission.update');
     Route::get('/deletePermission/{id}','deletepermission')->name('permission.delete');
  });
+
+ Route::controller(RoleController::class)->middleware(['auth','verified'])->group(function (){
+    
+    Route::get('/roleIndex','index');
+    Route::post('/saveRole','storerole')->name('role.store');
+    Route::post('/roleUpdate','updaterole')->name('role.update');
+    Route::get('/deleteRole/{id}','deleterole')->name('role.delete');
+
+    Route::get('/permissionToRole/{id}','givePermissionToRole')->name('role.givePermissionToRole');
+    Route::put('/givePermissionToRole/{id}','giveRoleToPermission')->name('role.giveRoleToPermission');
+ });
+ 
  
 
 require __DIR__.'/auth.php';
