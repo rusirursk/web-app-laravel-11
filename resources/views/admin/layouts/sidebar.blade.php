@@ -51,6 +51,10 @@
                     </nav>
                 </div>
                 <div class="sb-sidenav-menu-heading">Main Menu</div>
+                <a class="nav-link" href="/adminContact">
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                    Messages
+                </a>
                 <a class="nav-link" href="/settings">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Settings

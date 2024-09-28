@@ -60,14 +60,9 @@
                                 <a href="#" class="nav-link" data-bs-toggle="dropdown">
                                     <span class="dropdown-toggle">Pages</span>
                                 </a>
-                                <div class="dropdown-menu">
-                                    <a href="project.html" class="dropdown-item">Our projects</a>
-                                    <a href="team.html" class="dropdown-item">Our team</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a>
-                                </div>
+                               
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="/contact" class="nav-item nav-link">Contact</a>
                             <div class="nav-btn ps-3">
                                 <button class="btn-search btn btn-primary btn-md-square mt-2 mt-lg-0 mb-4 mb-lg-0 flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
                                 <a href="#" class="btn btn-primary py-2 px-4 ms-0 ms-lg-3"> Get Solution</a>
