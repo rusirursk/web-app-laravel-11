@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\admin\TestimonialController;
+use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\TimeRestrictedAccess;
 use App\Models\Posts;
@@ -85,7 +86,7 @@ Route::controller(PostsController::class)->middleware(['auth','verified'])->grou
     Route::get('/permissionIndex','index');
     Route::post('/savePermission','storepermission')->name('permission.store');
     Route::post('/permissionUpdate','updatepermission')->name('permission.update');
-    Route::get('/deletePermission/{id}','deletepermission')->name('permission.delete');
+    Route::get('/deletePermission/{id}','deletepermission')->middleware(['role:super-admin'])->name('permission.delete');
  });
 
  Route::controller(RoleController::class)->middleware(['auth','verified'])->group(function (){
@@ -93,12 +94,19 @@ Route::controller(PostsController::class)->middleware(['auth','verified'])->grou
     Route::get('/roleIndex','index');
     Route::post('/saveRole','storerole')->name('role.store');
     Route::post('/roleUpdate','updaterole')->name('role.update');
-    Route::get('/deleteRole/{id}','deleterole')->name('role.delete');
+    Route::get('/deleteRole/{id}','deleterole')->middleware(['role:super-admin'])->name('role.delete');
 
     Route::get('/permissionToRole/{id}','givePermissionToRole')->name('role.givePermissionToRole');
     Route::put('/givePermissionToRole/{id}','giveRoleToPermission')->name('role.giveRoleToPermission');
  });
  
+ Route::controller(UserController::class)->middleware(['auth','verified','role:super-admin|admin'])->group(function (){
+    
+    Route::get('/userIndex','index');
+    Route::post('/saveUser','storeuser')->name('user.store');
+    Route::post('/userUpdate','updateuser')->name('user.update');
+    Route::get('/deleteUser/{id}','deleteuser')->middleware(['role:super-admin'])->name('user.delete');
+ });
  
 
 require __DIR__.'/auth.php';

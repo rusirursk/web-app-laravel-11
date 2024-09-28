@@ -3,7 +3,7 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/dashboard">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
@@ -66,7 +66,7 @@
                 </a>
                 <div class="collapse" id="userRoleManage" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="/">Users </a>
+                        <a class="nav-link" href="/userIndex">Users </a>
                         <a class="nav-link" href="/roleIndex">Roles </a>
                         <a class="nav-link" href="/permissionIndex">Permission </a>
                     </nav>
